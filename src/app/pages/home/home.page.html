@@ -1,0 +1,21 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <img src="https://res.cloudinary.com/dnxxrgqof/image/upload/v1616872597/moviles/home_erypbb.png" class="avatar">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides pager="true" class="slide-full">
+    <ion-slide *ngFor="let slide of slides">
+      <div>
+        <ion-card>
+          <img src="https://res.cloudinary.com/dnxxrgqof/image/upload/v1617652936/moviles/best-todo-list-apps-00-hero_lmrdim.png" >
+        </ion-card>
+        <ion-label>Start managing your tasks and organizing your life</ion-label>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <ion-button expand="full" color="primary" fill="clear" (click)="start()">Start the journey!</ion-button>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

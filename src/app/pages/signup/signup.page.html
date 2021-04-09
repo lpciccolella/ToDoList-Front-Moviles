@@ -1,0 +1,10 @@
+<app-header [routeBack]="'/'" [hasBack]="true" [authRedirect]="'/signin'" [showHeaderAuthButton]="true"
+  headerAuthButton="Sign In">
+</app-header>
+
+<ion-content>
+  <div id="header">
+    <h1>Create Your Account</h1>
+  </div>
+  <app-form [authForm]='signUpForm' [button]="'Sign Up'" (formEvent)="postData($event)"></app-form>
+</ion-content>

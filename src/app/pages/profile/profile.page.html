@@ -1,0 +1,14 @@
+<app-header [routeBack]="'/home/tasks'" [hasBack]="true"></app-header>
+<ion-content>
+    <ion-list>
+        <img src="https://res.cloudinary.com/dnxxrgqof/image/upload/v1616872593/moviles/person_dhgxtm.jpg">
+        <br />
+        <h1>Profile</h1>
+        <ion-item>
+            {{userInfo.name}}
+        </ion-item>
+        <ion-item>
+            {{userInfo.email}}
+        </ion-item>
+    </ion-list>
+</ion-content>

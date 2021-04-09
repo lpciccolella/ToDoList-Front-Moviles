@@ -1,5 +1,7 @@
 {
   "name": "todolist-front",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }
