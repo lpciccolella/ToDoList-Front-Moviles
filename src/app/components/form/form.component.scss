@@ -1,0 +1,18 @@
+ion-item {
+  ion-input {
+      background: transparent;
+      border: none;
+      font-size: 18px;
+      --padding-top: 20px;
+      --padding-bottom: 15px;
+      --padding-start: 5px;
+  }
+}
+
+#form,
+ion-button {
+  margin-top: 50px;
+  padding-left: 30px;
+  padding-right: 30px;
+  text-transform: initial;
+}

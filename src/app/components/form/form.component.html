@@ -1,3 +1,4 @@
-<p>
-  form works!
-</p>
+<div id="form" *ngFor="let input of authForm" class="ion-margin-bottom">
+  <ion-input [type]=input.type [placeholder]="input.placeholder" [(ngModel)]="formData[input.id]"></ion-input>
+</div>
+<ion-button expand="full" shape="round" (click)='sendData()'>{{buttonTitle}}</ion-button>

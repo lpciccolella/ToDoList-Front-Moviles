@@ -1,3 +1,13 @@
-<p>
-  sidemenu works!
-</p>
+<ion-menu side="start" menuId="first" contentId="main">
+  <app-header header="Menu"></app-header>
+  <ion-content>
+    <ion-list>
+      <ion-menu-toggle *ngFor="let item of menuData | async">
+        <ion-item [routerLink]="item.redirectTo">
+          <ion-icon slot="start" [name]="item.icon"></ion-icon>
+          <ion-label>{{item.name}}</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+    </ion-list>
+  </ion-content>
+</ion-menu>

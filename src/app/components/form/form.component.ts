@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-form',
@@ -7,8 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormComponent implements OnInit {
 
+  @Input() public authForm: any;
+  @Input('button') buttonTitle: any;
+  @Output() public formEvent = new EventEmitter();
+  public formData = {};
+
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
+  public sendData() {
+    this.formEvent.emit(this.formData);
+  }
 }

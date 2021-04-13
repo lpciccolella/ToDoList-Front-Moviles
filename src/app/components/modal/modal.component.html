@@ -1,3 +1,32 @@
-<p>
-  modal works!
-</p>
+<ion-toolbar>
+  <ion-back-button slot="start" defaultHref="" (click)="goBack()"></ion-back-button>
+  <ion-buttons slot="primary">
+    <ion-button (click)="togglePinnedIcon()">
+      <ion-icon slot="end" [name]="pinnedIcon"></ion-icon>
+    </ion-button>
+    <ion-button (click)="openDateTime()">
+      <ion-icon slot="end" name="notifications"></ion-icon>
+    </ion-button>
+    <ion-button (click)="showPriorities($event)">
+      <ion-icon slot="end" name="alert-outline"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+</ion-toolbar>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-input type="text" placeholder="Title" [(ngModel)]="title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" placeholder="Description" [(ngModel)]="description"></ion-input>
+    </ion-item>
+    <ion-toolbar no-border>
+      <ion-buttons slot="primary">
+        <ion-button (click)="createTask(title, description)">
+          <ion-icon slot="end" name="send"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-list>
+</ion-content>

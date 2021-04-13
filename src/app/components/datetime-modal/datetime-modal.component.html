@@ -1,3 +1,15 @@
-<p>
-  datetime-modal works!
-</p>
+<app-header header="Pick date & time" [date]="date" [time]="time" [dateTimeButtons]="true"></app-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>Date</ion-label>
+      <ion-datetime [value]="date" (ionChange)="assignDate($event)">
+      </ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>Time</ion-label>
+      <ion-datetime [value]="time" displayFormat="h:mm A" (ionChange)="assignTime($event)"></ion-datetime>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,3 +1,13 @@
-<p>
-  task works!
-</p>
+<ion-item-sliding class="taskContainer">
+  <ion-item (click)="viewTask()">
+    {{task.title}}<br />
+    {{task.description}}
+    <ion-icon *ngIf="task.priority ? true : false" [color]="priorityType" slot="end" name="alert-outline">
+    </ion-icon>
+  </ion-item>
+  <ion-item-options side="end">
+    <ion-item-option color="danger" (click)="deleteTask()">
+      <ion-icon name="trash-outline"></ion-icon>
+    </ion-item-option>
+  </ion-item-options>
+</ion-item-sliding>

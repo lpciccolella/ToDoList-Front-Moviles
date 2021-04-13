@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PopoverController } from '@ionic/angular';
 
 @Component({
   selector: 'app-popover',
@@ -7,8 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PopoverComponent implements OnInit {
 
-  constructor() { }
+  public priorities = [
+    {
+      priority: 'High Priority',
+      color: 'danger'
+    },
+    {
+      priority: 'Medium Priority',
+      color: 'warning'
+    },
+    {
+      priority: 'Low Priority',
+      color: 'secondary'
+    }
+  ];
+  constructor(private _popOverCtrl: PopoverController) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
+  public selectPriority(priority: string) {
+    this._popOverCtrl.dismiss({
+      priority
+    });
+  }
 }
