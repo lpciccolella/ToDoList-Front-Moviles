@@ -1,0 +1,30 @@
+<app-header [showSideMenu]="true" [hasBack]="false" header="Tasks"></app-header>
+<ion-content>
+  <ion-searchbar placeholder="Search by title" animated (ionChange)="searchTasks($event)"></ion-searchbar>
+
+  <div *ngIf="tasks.length == 0" class="noTasksContainer">
+    <img
+      src="https://res.cloudinary.com/dnxxrgqof/image/upload/v1616872587/moviles/logo_qsgdvl.jpg">
+    <p><b>Start creating tasks by pressing + button.</b></p>
+  </div>
+
+  <ion-list>
+    <app-task *ngFor="let task of tasksNotPinned | filter: searchTask: 'title'" [task]="task"
+      (deletedTask)="deletedTask($event)">
+    </app-task>
+  </ion-list>
+
+  <div *ngIf="tasksPinned.length > 0">
+    <ion-item *ngIf="searchTask.length == 0">
+      <ion-label><b>PINNED</b></ion-label>
+      <ion-icon name="eyedrop"></ion-icon>
+    </ion-item>
+    <app-task *ngFor="let task of tasksPinned | filter: searchTask: 'title'" [task]="task"></app-task>
+  </div>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="openCreateTaskModal()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

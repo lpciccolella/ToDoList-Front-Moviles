@@ -1,0 +1,22 @@
+[
+  {
+      "icon": "person-circle",
+      "name": "Profile",
+      "redirectTo": "profile"
+  },
+  {
+      "icon": "calendar",
+      "name": "Today",
+      "redirectTo": "home/calendar"
+  },
+  {
+      "icon": "stats-chart-outline",
+      "name": "Statistics",
+      "redirectTo": "statistics"
+  },
+  {
+      "icon": "settings",
+      "name": "Settings",
+      "redirectTo": "home/settings"
+  }
+]

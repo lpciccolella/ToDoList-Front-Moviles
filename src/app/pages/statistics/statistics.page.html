@@ -1,0 +1,26 @@
+<app-header header="Statistics" [routeBack]="'/home/tasks'" [hasBack]="true"></app-header>
+
+<ion-content>
+  <div>
+    <ion-button slot="start" expand="full" (click)="getData()">
+      <ion-icon slot="start" name="search"></ion-icon>
+      Search
+    </ion-button>
+  </div>
+
+  <canvas baseChart [datasets]="chartData" [labels]="chartLabels" [options]="chartOptions" [colors]="chartColors"
+    [legend]="showLegend" [chartType]="chartType">
+  </canvas>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Settings</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Show legend</ion-label>
+        <ion-toggle [(ngModel)]="showLegend"></ion-toggle>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

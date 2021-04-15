@@ -1,0 +1,11 @@
+<ion-content>
+  <ion-calendar class="color" [(ngModel)]="date" (change)="onChange($event)" [type]="type" [format]="'YYYY-MM-DD'">
+  </ion-calendar>
+  <div *ngIf="pendingTasks.length == 0; else tasks">
+      <h1 class="notPendingTasks">Free Day!</h1>
+  </div>
+  <ng-template #tasks>
+      <h1 class="pendingTasks">Pending Tasks</h1>
+      <app-task *ngFor="let pendingTask of pendingTasks" [task]="pendingTask"></app-task>
+  </ng-template>
+</ion-content>
